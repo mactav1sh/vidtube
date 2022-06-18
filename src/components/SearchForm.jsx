@@ -4,8 +4,7 @@ import { VideosContext } from '../contexts/VideosContext';
 
 function SearchForm() {
   const [query, setQuery] = useState('');
-  const { dispatch, nextPageToken } = useContext(VideosContext);
-  console.log(nextPageToken);
+  const { dispatch } = useContext(VideosContext);
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +23,7 @@ function SearchForm() {
         <input
           onChange={(e) => setQuery(e.target.value)}
           type="text"
-          className="pl-2 pr-8 py-1 border-b placeholder:text-gray-400 focus:outline focus:outline-gray-200"
+          className="pl-2 w-48 md:w-auto pr-8 py-1 border-b placeholder:text-gray-400 focus:outline focus:outline-gray-200"
           placeholder="Search"
           value={query}
         />

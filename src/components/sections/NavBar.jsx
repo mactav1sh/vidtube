@@ -6,13 +6,13 @@ function NavBar() {
   return (
     <div
       className="flex items-center 
-    justify-between p-4 border-b fixed w-full bg-white"
+    justify-between p-4 border-b fixed w-full bg-white space-x-1"
     >
       <Link to="/">
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-red-500"
+            className="h-7 w-7 md:h-8 md:w-8 text-red-500"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -22,7 +22,9 @@ function NavBar() {
               clipRule="evenodd"
             />
           </svg>
-          <p className="text-2xl font-bold tracking-wider">VIDTUBE</p>
+          <p className="text-xl md:text-2xl font-bold tracking-wider">
+            VIDTUBE
+          </p>
         </div>
       </Link>
       <SearchForm />

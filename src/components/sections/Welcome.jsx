@@ -3,7 +3,7 @@ import SearchForm from '../SearchForm';
 
 function Welcome() {
   return (
-    <div className="bg-white rounded-md shadow-md flex flex-col-reverse md:space-x-10 md:flex-row overflow-hidden">
+    <div className="bg-white md:rounded-md shadow-md flex flex-col-reverse md:space-x-10 md:flex-row overflow-hidden">
       {/* text and form */}
       <div
         className="flex flex-col space-y-6 mt-5
@@ -17,8 +17,8 @@ function Welcome() {
       </div>
       {/* Image */}
       <img
-        className="md:w-72"
-        src="https://media0.giphy.com/media/3o85xx8dDpwLQu6B20/giphy.gif?cid=ecf05e47rzoa919tqjd6u4uxgwqeo5gn9ojxmp7sdrll7efn&rid=giphy.gif&ct=g"
+        className="md:w-96"
+        src="https://media2.giphy.com/media/bsNVJthYEr506gGcka/giphy.gif?cid=790b76114b093f78125a4793f03a599d4537020169958de5&rid=giphy.gif&ct=g"
         alt="tvs"
       />
     </div>
@@ -26,7 +26,3 @@ function Welcome() {
 }
 
 export default Welcome;
-
-// tv1
-// src="https://media3.giphy.com/media/HhgKxrRAsFqVi/giphy.gif?cid=ecf05e47mbkpy24zszqi1mzulkxmtktoiw8kl03f379sanun&rid=giphy.gif&ct=g"
-//         alt="tvs"

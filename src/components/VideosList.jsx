@@ -3,16 +3,20 @@ import { VideosContext } from '../contexts/VideosContext';
 import VideoItem from './VideoItem';
 import Welcome from './sections/Welcome';
 import getNextVideos from '../actions/getNextVideos';
+import { useState } from 'react';
 
 function VideosList() {
   const { videos, dispatch, query, nextPageToken } = useContext(VideosContext);
-  console.log(query, nextPageToken);
+
+  const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
-    console.log(query, nextPageToken);
+    if (loading) return;
+    setLoading(true);
     const data = await getNextVideos(query, nextPageToken);
-    dispatch({ type: 'SET_VIDEOS', payload: data.items });
+    dispatch({ type: 'UPDATE_VIDEOS', payload: data.items });
     dispatch({ type: 'SET_NEXTPAGE', payload: data.nextPageToken });
+    setLoading(false);
   };
 
   const displayVideos = (videos = []) => {
@@ -27,7 +31,8 @@ function VideosList() {
       </div>
       <button
         onClick={handleClick}
-        className="px-4 py-2  bg-gray-300 rounded-md mb-4 hover:bg-gray-400 transition duration-300"
+        disabled={loading}
+        className="px-4 py-2 bg-red-500 text-white font-bold rounded-md mb-4 hover:bg-gray-500 transition duration-300 disabled:bg-gray-500"
       >
         Load more
       </button>
