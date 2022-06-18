@@ -3,6 +3,7 @@ import VideosProvider from './contexts/VideosContext';
 import Home from './components/pages/Home';
 import VideoPlayer from './components/pages/VideoPlayer';
 import Notfound from './components/pages/Notfound';
+import SearchResults from './components/pages/SearchResults';
 
 import NavBar from './components/sections/NavBar';
 import Footer from './components/sections/Footer';
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/video/:id" element={<VideoPlayer />} />
           <Route path="/*" element={<Notfound />} />
+          <Route path="/search-results" element={<SearchResults />} />
         </Routes>
         <Footer />
       </VideosProvider>

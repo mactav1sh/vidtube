@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import searchVideos from '../actions/searchVideos';
 import { VideosContext } from '../contexts/VideosContext';
 
 function SearchForm() {
   const [query, setQuery] = useState('');
   const { dispatch } = useContext(VideosContext);
-
+  const navigate = useNavigate();
   const onFormSubmit = async (e) => {
     e.preventDefault();
     if (query.length === 0) return;
@@ -15,6 +16,8 @@ function SearchForm() {
     dispatch({ type: 'SET_VIDEOS', payload: data.items });
     dispatch({ type: 'SET_QUERY', payload: query });
     dispatch({ type: 'SET_NEXTPAGE', payload: data.nextPageToken });
+    navigate('/search-results');
+    setQuery('');
   };
 
   return (

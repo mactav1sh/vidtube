@@ -1,12 +1,12 @@
 import React from 'react';
-import Welcome from '../sections/Welcome';
+import VideosList from '../VideosList';
 
-function Home() {
+function SearchResults() {
   return (
     <div className="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
-      <Welcome />
+      <VideosList />
     </div>
   );
 }
 
-export default Home;
+export default SearchResults;
