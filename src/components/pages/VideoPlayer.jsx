@@ -20,6 +20,7 @@ function VideoPlayer() {
           allowFullScreen
         ></iframe>
         <SideBar />
+        <div></div>
       </div>
     </div>
   );

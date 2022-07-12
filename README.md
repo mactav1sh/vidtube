@@ -1,6 +1,6 @@
 # Getting Started
 
-Vidtube is a web app for searching for videos using the youtube API
+[Vidtube](https://vidtubemact.netlify.app/) is a web app for searching for videos using the youtube API
 
 ## Available Scripts
 
